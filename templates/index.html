@@ -1,0 +1,90 @@
+$def with (vcp)
+$code
+    vc=vcp[0]
+    pages=vcp[1]
+    arg=vcp[2]
+    if vcp[3] == None:
+        q=''
+    else:
+        q=vcp[3]
+    num=vcp[4]
+
+<HTML>
+	<HEAD>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>EasyRepo|提供在线下载Cydia源插件</title>
+		<META NAME="keywords" CONTENT="Cydia,Repo,源,ios,iphone,ipad,178源,weiphone源,下载">
+		<META NAME="description" content="EasyRepo提供Cydia源中插件的下载，主要收集178源和威锋源。同时也提供了基本的搜索列表功能">
+		<link rel="stylesheet" href="/static/style.css">
+		<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	</HEAD>
+
+	<BODY>
+	<div class="container">
+		<div class="header">
+			<ul class="nav nav-pills pull-right custm">
+			  <li class="active"><a href="/"><i class="home"></i><span>首页</span></a></li>
+			</ul>
+			<h3 class="text-muted"><a href="/"><img src='/static/easyrepo.png'></a></h3>
+		 </div>
+		
+		<div class="main clearfix">
+		<div class="page-header tsearch">
+			<h1>Find Your Tweak！</h1>
+			<p>下载你喜欢的插件</p>
+			<form id="search" method="get">
+			<div class="input-group input-group-lg">
+			  <input type="text" name="q" class="form-control" />
+			  <span class="input-group-btn">
+				<input class="btn btn-success" type="submit" value="Go!" />
+			  </span>
+			</div>
+			  </form>
+		</div>
+		<table class="table table-bordered">
+			<tr>
+				<td><b>最近更新</b></td>
+				<td>摘要</td>
+				<td>版本</td>
+				<td>作者</td>
+				<td>发布时间</td>
+				<td>来源</td>
+			</tr>
+			$for r in vc:
+				<tr bgcolor=#ffffff height=30>
+					$if r.name:
+						<td class="xt" valign=middle><a href="/?id=$r.id">$:r.name</a></td>
+					$else:
+						<td class=xt valign=middle><a href="/?id=$r.id">$:r.package</a></td>
+					<td width="300px">$:r.description</td>
+					<td class="xt">$:r.version</td>
+					<td class="xt">$:r.author</td>
+					<td>$:r.pubdatetime</td>
+					<td class="xt">$r.repo</td>
+				</tr>
+		</table>
+		<table class="table">
+			<tr bgcolor=#ffffff height=30 align=right>
+				<td>
+				<font size=4>
+					<a href="$arg=1">首页</a>
+					<a href="$arg=$pages[0]">上一页</a>
+					$for p in pages[3:]:
+						<a href="$arg=$p">$p</a>
+					<a href="$arg=$pages[1]">下一页</a>
+					<a href="$arg=$pages[2]">末页</a>
+				</font>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<hr>
+		<footer>
+		<p>© Company 2014</p>
+		</footer>
+	</div>
+		 <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+	</BODY>
+</HTML>

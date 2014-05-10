@@ -1,0 +1,66 @@
+.custm{
+	margin:15px 0;
+}
+.tsearch{
+	text-align:center;
+}
+
+.tsearch p{
+	font-size:22px;
+}
+
+.tsearch .input-group{
+	width:60%;
+	margin:0 auto;
+}
+
+.content{
+
+}
+
+.deb_info{
+	margin: 0 auto;
+	width: 65%;
+}
+.section{
+	display:block;
+}
+.deb_left{
+	float:left;
+	text-align:center;
+}
+.deb_right{
+	float:left;
+}
+.deb_img{
+	display:block;
+	margin:0 10px ;
+}
+
+.add_downbtn{
+	display:inline-block;
+	color: #FFF;
+	border-radius: 5px;
+	font-size: 16px;
+	text-align: center;
+	margin:10px;
+}
+
+.deb_info table{
+	height: 230px;
+	width: 552px;
+}
+
+.deb_content{
+	padding:10px;
+	width:65%;
+	margin:0 auto;
+}
+
+.deb_content .title h3 {
+	border-bottom: 2px solid #48474D;
+	color: #48474D;
+	font-size: 20px;
+	font-weight: normal;
+	padding: 3px 0;
+}
